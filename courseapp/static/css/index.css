@@ -651,6 +651,7 @@
 }
 
 .inline_class {
+
     position: relative;
     margin-top: 264px;
     height: 482px;
@@ -662,6 +663,8 @@
     height: 482px;
     width: 15%;
     position: relative;
+    display: inline-block;
+    margin-right: 20px;
 }
 
 #u482 {
