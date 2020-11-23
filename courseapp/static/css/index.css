@@ -651,11 +651,17 @@
 }
 
 .inline_class {
-    
+    position: relative;
+    margin-top: 264px;
+    height: 482px;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .left_dvig {
-
+    height: 482px;
+    width: 15%;
+    position: relative;
 }
 
 #u482 {
@@ -666,25 +672,22 @@
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=87)";
 	filter: alpha(opacity=87);
 	border-radius: 4px;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 264px;
-	width: 15.63%;
-	left: 7.97%;
+	position: absolute;
+	width: 100%;
 }
 
 #u476 {
 	z-index: 51;
-	height: 193px;
+	height: 150px;
 	opacity: 1;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
 	filter: alpha(opacity=100);
 	border-radius: 50%;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 280px;
-	width: 10.37%;
-	left: 50%;
+	position: absolute;
+	margin-top: 0;
+	width: 66.34%;
+	top: 1%;
+	left: 16%;
 	background: transparent url("../images/master.jpg?crc=4070975820") no-repeat center center;
 }
 
@@ -697,25 +700,25 @@
 	text-align: center;
 	font-family: '__Bebas Neue_5';
 	font-weight: 700;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 488px;
-	width: 10.37%;
-	left: 10.63%;
+	position: absolute;
+	width: 66.34%;
+	top: 170px;
+	left: 16%;
 }
 
 #u488-6 {
 	z-index: 56;
 	min-height: 136px;
 	background-color: transparent;
+	border-top: 3px solid black;
+	padding-top: 10px;
 	text-align: center;
 	font-family: '__Bebas Neue_5';
 	font-weight: 700;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 578px;
-	width: 11.67%;
-	left: 9.95%;
+	position: absolute;
+	width: 74.47%;
+	top: 250px;
+	left: 15.5%;
 }
 
 #u488-2 {
@@ -744,7 +747,7 @@
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=87)";
 	filter: alpha(opacity=87);
 	border-radius: 4px;
-	position: relative;
+	position: absolute;
 	margin-right: -10000px;
 	margin-top: 40px;
 	width: 48.03%;
@@ -765,17 +768,6 @@
 	margin-top: 58px;
 	width: 42.35%;
 	left: 28.7%;
-}
-
-#u1649 {
-	z-index: 83;
-	height: 1px;
-	background-color: #000000;
-	position: relative;
-	margin-right: -10000px;
-	margin-top: 564px;
-	width: 11.67%;
-	left: 9.95%;
 }
 
 .css_verticalspacer .verticalspacer {
