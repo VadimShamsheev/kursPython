@@ -1,0 +1,58 @@
+<manifest alg="2" build="2018.1.0.386" opt="false" iceEnabled="true" iceMarkupVersion="2" iceEnabledOptions="link,responsive,cachebuster,textStyling" exportTarget="other" domain="example.com" resolutions="1x" timestamp="1606055458373">
+  <folder name="css">
+    <file name="site_global.css" crc="444006867"/>
+    <file name="edit_service.css" crc="4057281568" ref="edit_service"/>
+    <file name="master_page.css" crc="517930314" ref="master_page"/>
+    <file name="index.css" crc="4001294512" ref="index"/>
+    <file name="create_order.css" crc="4103300876" ref="create_order"/>
+    <file name="register_form.css" crc="3970517920" ref="register_form"/>
+    <file name="admin_page.css" crc="187871884" ref="admin_page"/>
+    <file name="admin_page-_____.css" crc="4166332272" ref="admin_page-копия"/>
+    <file name="authorize_form.css" crc="3802462496" ref="authorize_form"/>
+  </folder>
+  <folder name="fonts">
+    <file name="bebasneuebold.woff" crc="3831803540"/>
+    <file name="bebasneuebold.eot" crc="4160090888"/>
+    <file name="bebasneueregular.woff" crc="4255507988"/>
+    <file name="bebasneueregular.eot" crc="4271272888"/>
+  </folder>
+  <folder name="scripts">
+    <file name="jquery-1.8.3.min.js" crc="209076791" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="museutils.js" crc="340535759" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="whatinput.js" crc="86476730" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="museconfig.js" crc="4286661555" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="jquery.musepolyfill.bgsize.js" crc="4260645839" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="jquery.watch.js" crc="51536988" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="require.js" crc="7928878" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+  </folder>
+  <folder name="images">
+    <file name="guest_main.jpg" crc="4081322088" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="blank.gif" crc="4208392903" ref="index:register_form:authorize_form:admin_page:master_page:create_order:admin_page-копия:edit_service"/>
+    <file name="guest_service.jpg" crc="240912250" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="guest_master.jpg" crc="342068731" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="master.jpg" crc="4070975820" ref="index">
+      <caption webpage="index" alt=""/>
+    </file>
+    <file name="update.png" crc="505964093" ref="admin_page:admin_page-копия">
+      <caption webpage="admin_page" alt=""/>
+      <caption webpage="admin_page-копия" alt=""/>
+    </file>
+    <file name="add.png" crc="372591820" ref="create_order">
+      <caption webpage="create_order" alt=""/>
+    </file>
+  </folder>
+  <file name="index.html" crc="439418452" seo="true" mt="1605867041261" redirect="true"/>
+  <file name="register_form.html" crc="361942847" seo="true" mt="1605865700382" redirect="true"/>
+  <file name="authorize_form.html" crc="19585555" seo="true" mt="1605863303123" redirect="true"/>
+  <file name="admin_page.html" crc="84244335" seo="true" mt="1605865073687" redirect="true"/>
+  <file name="master_page.html" crc="4139882383" seo="true" mt="1605863303125" redirect="true"/>
+  <file name="create_order.html" crc="291562455" seo="true" mt="1605865073689" redirect="true"/>
+  <file name="admin_page-копия.html" crc="141654046" seo="true" mt="1605865073686" redirect="true"/>
+  <file name="edit_service.html" crc="3965338692" seo="true" mt="1605866975266" redirect="true"/>
+</manifest>
