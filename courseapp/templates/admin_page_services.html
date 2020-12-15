@@ -25,32 +25,25 @@
        </div>
        <a class="nonblock nontext transition grpelem" id="u1889" href="/"><!-- simple frame --></a>
       </div>
-      <div class="clearfix colelem" id="pu1887"><!-- group -->
-       <div class="grpelem" id="u1887"><!-- simple frame --></div>
-       <a class="nonblock nontext clearfix grpelem" id="u1903-4" href="index.html"><!-- content --><p id="u1903-2">создать</p></a>
-       <a class="nonblock nontext transition grpelem" id="u1898" href="create_order.html"><!-- simple frame --></a>
-      </div>
       <div class="clearfix colelem" id="pu1895"><!-- group -->
        <div class="grpelem" id="u1895"><!-- simple frame --></div>
        <div class="clearfix grpelem" id="u1888-4"><!-- content -->
         <p id="u1888-2">название</p>
        </div>
-       <div class="clearfix grpelem" id="u1902-4"><!-- content -->
-        <p id="u1902-2">обычная стрижка</p>
-       </div>
+
        <div class="clearfix grpelem" id="u1892-4"><!-- content -->
         <p id="u1892-2">стоимость (руб.)</p>
        </div>
-       <div class="clearfix grpelem" id="u1891-4"><!-- content -->
-        <p id="u1891-2">1300</p>
-       </div>
+
        <div class="clearfix grpelem" id="u1901-4"><!-- content -->
         <p id="u1901-2">продолжительность (мин.)</p>
        </div>
-       <div class="clearfix grpelem" id="u1884-4"><!-- content -->
-        <p id="u1884-2">20</p>
+       <div class="inline_class">
+        {% for service in services %}
+         {% include 'admin_service_temp.html' %}
+        {% endfor %}
        </div>
-       <div class="museBGSize grpelem" id="u1886"><!-- simple frame --></div>
+
       </div>
      </div>
     </div>

@@ -1,0 +1,20 @@
+<div class="block_temp">
+    {{ order.service.service_rel.all }}
+    <div class="clearfix grpelem" id="u1608-4">
+        <p id="u1608-2">{{ order.date_time|date:"H:i" }}</p>
+    </div>
+    <div class="clearfix grpelem" id="u1616-4">
+
+        <!--<p id="u1616-2">
+            {{ order.customer_id.name }}
+        </p>-->
+
+        <select id="u1616-2">
+             <option selected disabled hidden>услуги</option>
+            {% for service in order.service.all %}
+            <option disabled>{{ service.name }}</option>
+            {% endfor %}
+
+        </select>
+    </div>
+</div>

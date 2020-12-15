@@ -5,8 +5,8 @@
   <meta name="generator" content="2018.1.0.386"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Барбер-шоп HairCuttorga</title>
-  <link rel="stylesheet" type="text/css" href="static/css/site_global.css?crc=444006867"/>
-  <link rel="stylesheet" type="text/css" href="static/css/create_order.css?crc=473971086" id="pagesheet"/>
+  <link rel="stylesheet" type="text/css" href="../static/css/site_global.css?crc=444006867"/>
+  <link rel="stylesheet" type="text/css" href="../static/css/create_order.css?crc=473971086" id="pagesheet"/>
  </head>
  <body>
 
@@ -16,15 +16,10 @@
      <div class="clearfix" id="u1717_align_to_page">
       <div class="clearfix colelem" id="pu1707">
        <div class="grpelem" id="u1707"></div>
-       {% if user_privilege == "customer" %}
-       <a class="nonblock nontext clearfix grpelem" id="u1719-4" href="admin_page.html"><p id="u1719-2">главная</p></a>
-       <a class="nonblock nontext transition grpelem" id="u1718" href="customer_page.html"></a>
-       {% else %}
        <a class="nonblock nontext clearfix grpelem" id="u1719-4" href="admin_page.html"><p id="u1719-2">заказы</p></a>
        <a class="nonblock nontext clearfix grpelem" id="u1714-4" href="index.html"><p id="u1714-2">услуги</p></a>
-       <a class="nonblock nontext transition grpelem" id="u1718" href="admin_page.html"></a>
-       <a class="nonblock nontext transition grpelem" id="u1705" href="admin_page_services.html"></a>
-       {% endif %}
+       <a class="nonblock nontext transition grpelem" id="u1718" href="../admin_page.html"></a>
+       <a class="nonblock nontext transition grpelem" id="u1705" href="../admin_page_services.html"></a>
        <div class="clearfix grpelem" id="u1720-4">
         <p id="u1720-2">выход</p>
        </div>
@@ -33,64 +28,73 @@
       <div class="clearfix colelem" id="pu1716">
        <div class="grpelem" id="u1716"></div>
        <div class="clearfix grpelem" id="u1766-4">
-        <p id="u1766-2">создание заказа</p>
+        <p id="u1766-2">редактирование заказа</p>
        </div>
        <form method="post" action="" id="create_order_data">
         {% csrf_token %}
        <div class="clearfix grpelem" id="u1769-4">
         <p><span id="u1769">Дата</span></p>
-        <input type="date" id="create_order_date" name="create_order_date">
+        <input type="date" id="create_order_date" name="create_order_date" value="{{ order.date_time|date:'Y-m-d' }}">
        </div>
        <div class="clearfix grpelem" id="u1781-4">
         <p><span id="u1781">услуга</span></p>
-           <select id="create_service_name" name="create_service_name" form="create_order_data" multiple onchange="ServiceCost()">
+           <select id="create_service_name" name="create_service_name" form="create_order_data" multiple>
              {% for service in services %}
-               <option id="{{ service.price }}" value="{{ service.id }}">{{ service.name }}</option>
+
+               {% if service in order.service.all %}
+                <option value="{{ service.id }}" selected>{{ service.name }}</option>
+               {% else %}
+                <option value="{{ service.id }}">{{ service.name }}</option>
+               {% endif %}
+
              {% endfor %}
            </select>
-        <p style="margin-top: 20px;"><span>Цена</span></p>
-        <input id="cost_id" type="number" name="order_cost">
+        <p><span id="u1781">статус</span></p>
+           <select form="create_order_data" name="create_order_status" id="create_order_status">
+            {% for key, value in statuses.items %}
+             <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+           </select>
        </div>
        <div class="clearfix grpelem" id="u1772-4">
         <p><span id="u1772">Время</span></p>
         <select form="create_order_data" name="create_order_time" id="create_order_time">
-         <option value="10:00">10:00</option>
-         <option value="11:00">11:00</option>
-         <option value="12:00">12:00</option>
-         <option value="13:00">13:00</option>
-         <option value="14:00">14:00</option>
-         <option value="15:00">15:00</option>
-         <option value="16:00">16:00</option>
-         <option value="17:00">17:00</option>
-         <option value="18:00">18:00</option>
-         <option value="19:00">19:00</option>
-         <option value="20:00">20:00</option>
+         {% for ti in time_work %}
+         {% if order.date_time|date:"H:i" == ti %}
+         <option value="{{ ti }}" selected>{{ ti }}</option>
+         {% else %}
+         <option value="{{ ti }}">{{ ti }}</option>
+         {% endif %}
+         {% endfor %}
         </select>
        </div>
        <div class="clearfix grpelem" id="u1775-4">
         <p><span id="u1775">клиент</span></p>
-        {% if user_privilege == "customer" %}
-         {{ customers.name }}
-         <input type="hidden" id="create_order_customer" name="create_order_customer" value="{{ customers.id }}">
-        {% else %}
         <select id="create_order_customer" name="create_order_customer" form="create_order_data">
          <option selected hidden disabled>Выбрать</option>
          {% for customer in customers %}
-          <option value="{{ customer.id }}">{{ customer.name }}</option>
+          {% if customer == order.customer_id %}
+           <option value="{{ customer.id }}" selected>{{ customer.name }}</option>
+          {% else %}
+           <option value="{{ customer.id }}">{{ customer.name }}</option>
+          {% endif %}
          {% endfor %}
         </select>
-        {% endif %}
        </div>
        <div class="clearfix grpelem" id="u1778-4">
         <p><span id="u1778">мастер</span></p>
         <select id="create_order_master" name="create_order_master" form="create_order_data">
          <option selected disabled hidden>Выбрать</option>
          {% for master in masters %}
-          <option value="{{ master.id }}">{{ master.name }}</option>
+          {% if order.master_id.id == master.id %}
+           <option value="{{ master.id }}" selected>{{ master.name }}</option>
+          {% else %}
+           <option value="{{ master.id }}">{{ master.name }}</option>
+          {% endif %}
          {% endfor %}
         </select>
        </div>
-       <div class="nonblock nontext clearfix grpelem" id="u1813-4"><p id="u1813-2">создать</p></div>
+       <div class="nonblock nontext clearfix grpelem" id="u1813-4"><p id="u1813-2">обновить</p></div>
        <input type="submit" class="nonblock nontext transition grpelem" id="u1816" value="">
        </form>
       </div>
@@ -99,28 +103,5 @@
    </div>
    <div class="verticalspacer" data-offset-top="849" data-content-above-spacer="848" data-content-below-spacer="61" data-sizePolicy="fixed" data-pintopage="page_fixedLeft"></div>
   </div>
-
-
-  <script>
-   function ServiceCost() {
-    var len = document.getElementById('create_service_name').options.length;
-    var SelectedElements = new Array;
-    var i = 0;
-    var sum = 0;
-
-    for (var n=0; n<len; n++) {
-     if (document.getElementById('create_service_name').options[n].selected == true) {
-      SelectedElements[i] = document.getElementById('create_service_name').options[n].id;
-      i++;
-     }
-    }
-
-    for (var n=0; n<SelectedElements.length; n++) {
-     sum += Number(SelectedElements[n]);
-    }
-
-    document.getElementById('cost_id').value = sum;
-   }
-  </script>
   </body>
 </html>

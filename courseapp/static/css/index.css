@@ -508,8 +508,7 @@
 
 #pu398 {
 	z-index: 15;
-	margin-top: 70px;
-	width: 31.27%;
+	width: 100%;
 }
 
 #u398 {
@@ -558,7 +557,7 @@
 
 #u395,
 #u389 {
-	font-size: 50px;
+	font-size: 26px;
 }
 
 #pu1646 {
@@ -667,6 +666,22 @@
     margin-right: 20px;
 }
 
+.inline_service {
+    position: relative;
+    margin-top: 264px;
+    height: 482px;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.left_dvig_service {
+    height: 150px;
+    width: 30%;
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
 #u482 {
 	z-index: 50;
 	height: 462px;
@@ -691,7 +706,7 @@
 	width: 66.34%;
 	top: 1%;
 	left: 16%;
-	background: transparent url("../images/master.jpg?crc=4070975820") no-repeat center center;
+
 }
 
 #u485-4 {

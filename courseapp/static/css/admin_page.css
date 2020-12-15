@@ -2,6 +2,15 @@
 
 */
 
+.inline_class {
+    height: 700px;
+}
+
+.element {
+    display: block;
+    height: 37px;
+}
+
 .version.admin_page {
 	color: #00001C;
 	background-color: #593B5B;
@@ -245,6 +254,20 @@
 	left: 15.11%;
 }
 
+#u1760-5 {
+	z-index: 54;
+	height: 50px;
+	background-color: transparent;
+	line-height: 58px;
+	font-size: 40px;
+	text-align: center;
+	font-family: '__Bebas Neue_5';
+	font-weight: 700;
+	position: relative;
+	width: 11%;
+	left: 15.11%;
+}
+
 #u1518-2,
 #u1587-2,
 #u1517-2,
@@ -305,7 +328,7 @@
 
 #u1534 {
 	z-index: 19;
-	height: 123px;
+	height: 700px;
 	background-color: #FFFFFF;
 	opacity: 0.9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";

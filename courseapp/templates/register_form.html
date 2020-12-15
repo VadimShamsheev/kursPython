@@ -25,23 +25,29 @@
        </div>
        <a class="nonblock nontext transition grpelem" id="u1026" href="authorize_form.html"></a>
       </div>
-      <form method="get" action="">
+      <form method="post" action="">
+       {% csrf_token %}
       <div class="clearfix colelem" id="pu1299">
        <div class="grpelem" id="u1299"></div>
        <div class="clearfix grpelem" id="u1271-4">
         <p id="u1271-2">Регистрация</p>
+        <p style="font-size: 24px; margin-top: -40px; color: #B33D3D;">{{ message }}</p>
        </div>
        <div class="clearfix grpelem" id="u1383-4">
         <p><span id="u1383">Имя</span></p>
-        <input type="text" name="reg_name" id="reg_name">
+        <input type="text" name="reg_name" id="reg_name" placeholder="" value="{{ name }}">
+        <p style=" position: absolute; font-size: 18px; left: 250px; margin-top: -50px;">{{ name_message }}</p>
        </div>
+
        <div class="clearfix grpelem" id="u1386-4">
         <p><span id="u1386">логин</span></p>
-        <input type="text" name="reg_login" id="reg_login">
+        <input type="text" name="reg_login" id="reg_login" value="{{ login }}">
+        <p style=" position: absolute; font-size: 18px; left: 250px; margin-top: -50px;">{{ login_message }}</p>
        </div>
        <div class="clearfix grpelem" id="u1389-4">
         <p><span id="u1389">пароль</span></p>
         <input type="password" name="reg_pass" id="reg_pass">
+        <p style=" position: absolute; font-size: 18px; left: 250px; margin-top: -50px;">{{ pass_message }}</p>
        </div>
        <a class="nonblock nontext clearfix grpelem" id="u1941-4" href="index.html"><p id="u1941-2">зарегистрироваться</p></a>
        <input type="submit" class="nonblock nontext transition grpelem" id="u1944" value="">

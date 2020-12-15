@@ -2,6 +2,15 @@
 
 */
 
+.inline_class {
+    height: 300px;
+}
+
+.block_temp {
+    display: block;
+    height: 54px;
+}
+
 .version.master_page {
 	color: #000009;
 	background-color: #B5749D;
@@ -121,6 +130,7 @@
 }
 
 #pu1617 {
+    height: 700px;
 	z-index: 9;
 	margin-top: 137px;
 	position: relative;
@@ -129,7 +139,7 @@
 
 #u1617 {
 	z-index: 9;
-	height: 185px;
+	height: 700px;
 	background-color: #FFFFFF;
 	opacity: 0.9;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=90)";

@@ -23,20 +23,16 @@
        <div class="clearfix grpelem" id="u428-4">
         <p id="u428-2">мастера</p>
        </div>
-       <div class="clearfix grpelem" id="u437-4">
-        <p id="u437-2">регистрация</p>
-       </div>
        <div class="clearfix grpelem" id="u443-4">
-        <p id="u443-2">вход</p>
+        <p id="u443-2">выход</p>
        </div>
        <div class="clearfix grpelem" id="u425-4">
         <p id="u425-2">главная</p>
        </div>
        <a class="nonblock nontext anim_swing transition grpelem" id="u416" href="#services"></a>
        <a class="nonblock nontext anim_swing transition grpelem" id="u431" href="#masters"></a>
-       <a class="nonblock nontext transition grpelem" id="u434" href="register_form.html"></a>
-       <a class="nonblock nontext transition grpelem" id="u440" href="authorize_form.html"></a>
-       <a class="nonblock nontext MuseLinkActive grpelem" id="u422" href="/"></a>
+       <a class="nonblock nontext transition grpelem" id="u440" href="/"></a>
+       <a class="nonblock nontext MuseLinkActive grpelem" id="u422" href="customer_page.html"></a>
       </div>
       <div class="clearfix colelem" id="u134">
        <div class="grpelem" id="u131"></div>
@@ -67,6 +63,10 @@
         {% for service in services %}
          {% include 'service_template.html' %}
         {% endfor %}
+       </div>
+       <div class="clearfix colelem" id="pu1646">
+        <div class="grpelem" id="u1646"></div>
+        <a class="nonblock nontext rounded-corners clearfix grpelem" id="u401-4" href="create_order.html"><p>Записаться</p></a>
        </div>
       </div>
      </div>

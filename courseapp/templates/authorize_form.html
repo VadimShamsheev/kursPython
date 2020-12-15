@@ -22,20 +22,24 @@
        <a class="nonblock nontext transition grpelem" id="u1084" href="/"></a>
        <a class="nonblock nontext transition grpelem" id="u1088" href="register_form.html"></a>
       </div>
-      <form action="" method="get">
+
+      <form action="" method="post">
+       {% csrf_token %}
       <div class="clearfix colelem" id="pu1305">
        <div class="grpelem" id="u1305"></div>
        <div class="clearfix grpelem" id="u1327-4">
         <p id="u1327-2">Вход</p>
+        <p style="font-size: 24px; margin-top: -30px; color: #B33D3D;">{{ message }}</p>
        </div>
        <div class="clearfix grpelem" id="u1392-4">
         <p><span id="u1392">логин</span></p>
-        <input type="text" id="auth_login" name="auth_login">
+        <input type="text" id="auth_login" name="auth_login" value="{{ login }}" autofocus>
        </div>
        <div class="clearfix grpelem" id="u1393-4">
         <p><span id="u1393">пароль</span></p>
         <input type="password" id="auth_pass" name="auth_pass">
        </div>
+
        <a class="nonblock nontext clearfix grpelem" id="u1941-4" href="index.html"><p id="u1941-2">войти</p></a>
        <input type="submit" class="nonblock nontext transition grpelem" id="u1944" value="">
       </div>

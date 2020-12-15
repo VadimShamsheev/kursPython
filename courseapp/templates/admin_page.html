@@ -29,34 +29,39 @@
        <div class="grpelem" id="u1763"></div>
        <a class="nonblock nontext clearfix grpelem" id="u1760-4" href="index.html"><p id="u1760-2">создать</p></a>
        <a class="nonblock nontext transition grpelem" id="u1757" href="create_order.html"></a>
+       <form action="" method="post">
+        {% csrf_token %}
+        <select id="u1760-5" style="left: 30%; background: white; opacity: 87%;" name="filter_master">
+         <option value="none" disabled selected hidden>мастер</option>
+         <option value="none">нет</option>
+         {% for master in masters %}
+          <option value="{{ master.id }}">{{ master.name }}</option>
+         {% endfor %}
+        </select>
+        <input type="datetime-local" id="u1760-5" name="filter_start_date" style="left: 30%; background: white; opacity: 87%; width: 18%;">
+        <input type="datetime-local" id="u1760-5" name="filter_end_date" style="left: 30%; background: white; opacity: 87%; width: 18%;">
+        <input id="u1760-5" type="submit" value="применить" style="left: 30%; background: white; opacity: 87%;">
+       </form>
       </div>
       <div class="clearfix colelem" id="pu1534">
        <div class="grpelem" id="u1534"></div>
        <div class="clearfix grpelem" id="u1540-4">
         <p id="u1540-2">Дата записи</p>
        </div>
-       <div class="clearfix grpelem" id="u1561-4">
-        <p id="u1561-2">29 февраля</p>
-       </div>
        <div class="clearfix grpelem" id="u1546-4">
         <p id="u1546-2">время</p>
-       </div>
-       <div class="clearfix grpelem" id="u1564-4">
-        <p id="u1564-2">8:15</p>
        </div>
        <div class="clearfix grpelem" id="u1549-4">
         <p id="u1549-2">мастер</p>
        </div>
-       <div class="clearfix grpelem" id="u1567-4">
-        <p id="u1567-2">Владислав снигерёв</p>
-       </div>
        <div class="clearfix grpelem" id="u1552-4">
         <p id="u1552-2">клиент</p>
        </div>
-       <div class="clearfix grpelem" id="u1570-4">
-        <p id="u1570-2">гость елена</p>
+       <div>
+        {% for order in orders %}
+          {% include 'admin_order_template.html' %}
+        {% endfor %}
        </div>
-       <div class="museBGSize grpelem" id="u1573"></div>
       </div>
      </div>
     </div>

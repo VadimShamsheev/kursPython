@@ -1,0 +1,15 @@
+<div class="element">
+    <div class="clearfix grpelem" id="u1561-4">
+        <p id="u1561-2">{{ order.date_time|date:"j b"}}</p>
+       </div>
+    <div class="clearfix grpelem" id="u1567-4">
+        <p id="u1567-2">{{ order.master_id.name }}</p>
+    </div>
+    <div class="clearfix grpelem" id="u1564-4">
+        <p id="u1564-2">{{ order.date_time|date:"G:i" }}</p>
+    </div>
+    <div class="clearfix grpelem" id="u1570-4">
+        <p id="u1570-2">{{ order.customer_id.name }}</p>
+    </div>
+    <a class="museBGSize grpelem" id="u1573" href="edit_order.html/{{ order.id }}"></a>
+</div>
